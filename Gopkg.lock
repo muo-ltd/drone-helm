@@ -10,25 +10,6 @@
   version = "v1.1.1"
 
 [[projects]]
-  branch = "master"
-  digest = "1:315c5f2f60c76d89b871c73f9bd5fe689cad96597afd50fb9992228ef80bdd34"
-  name = "github.com/alecthomas/template"
-  packages = [
-    ".",
-    "parse",
-  ]
-  pruneopts = "UT"
-  revision = "a0175ee3bccc567396460bf5acd36800cb10c49c"
-
-[[projects]]
-  branch = "master"
-  digest = "1:f7596b8262a5afc7a0152cf25b8945899fb7595815510cb440669af332136ac5"
-  name = "github.com/ipedrazas/drone-helm"
-  packages = ["plugin"]
-  pruneopts = "UT"
-  revision = "8e7b0b391270265092b9cb1cb4d19acf163c2750"
-
-[[projects]]
   digest = "1:ecd9aa82687cf31d1585d4ac61d0ba180e42e8a6182b85bd785fcca8dfeefc1b"
   name = "github.com/joho/godotenv"
   packages = ["."]
@@ -43,6 +24,14 @@
   pruneopts = "UT"
   revision = "5c8c8bd35d3832f5d134ae1e1e375b69a4d25242"
   version = "v1.0.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:73b1519055d9a209f77c464aec200d0f0bbef8a2970e00f1e205fb905c4d204b"
+  name = "github.com/muo-ltd/drone-helm"
+  packages = ["plugin"]
+  pruneopts = "UT"
+  revision = "c110459ad9aff373cb25e3fb3a6650d31209dde7"
 
 [[projects]]
   digest = "1:b24d38b282bacf9791408a080f606370efa3d364e4b5fd9ba0f7b87786d3b679"
@@ -76,8 +65,8 @@
   analyzer-version = 1
   input-imports = [
     "github.com/Sirupsen/logrus",
-    "github.com/ipedrazas/drone-helm/plugin",
     "github.com/joho/godotenv",
+    "github.com/muo-ltd/drone-helm/plugin",
     "github.com/urfave/cli",
   ]
   solver-name = "gps-cdcl"

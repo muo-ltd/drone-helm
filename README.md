@@ -1,20 +1,15 @@
 # Helm (Kubernetes) plugin for drone.io
 
-[![Build Status](https://cloud.drone.io/api/badges/ipedrazas/drone-helm/status.svg)](https://cloud.drone.io/ipedrazas/drone-helm)
-[![Docker Repository on Quay](https://quay.io/repository/ipedrazas/drone-helm/status "Docker Repository on Quay")](https://quay.io/repository/ipedrazas/drone-helm)
-[![Go Doc](https://godoc.org/github.com/ipedrazas/drone-helm?status.svg)](http://godoc.org/github.com/ipedrazas/drone-helm)
-[![Go Report](https://goreportcard.com/badge/github.com/ipedrazas/drone-helm)](https://goreportcard.com/report/github.com/ipedrazas/drone-helm)
-[![](https://images.microbadger.com/badges/image/ipedrazas/drone-helm.svg)](https://microbadger.com/images/ipedrazas/drone-helm "Get your own image badge on microbadger.com")
+Update of the `ipedrazas/drone-helm` chart to use newer versions of `helm` and `kubectl`. Docker hub image is `muoltd/drone-helm:2.16.9-1.17.6`. The version matches the version of both `helm` and `kubernetes` used.
 
 This plugin allows to deploy a [Helm](https://github.com/kubernetes/helm) chart into a [Kubernetes](https://github.com/kubernetes/kubernetes) cluster.
 
-* Current `helm` version: 2.14.1
-* Current `kubectl` version: 1.14.3
+* Current `helm` version: 2.16.9
+* Current `kubectl` version: 1.17.6
 
 ## Drone Pipeline Usage
 
 For the usage information and a listing of the available options please take a look at [the docs](DOCS.md).
-
 
 Run the local image (or replace `drone-helm` with `quay.io/ipedrazas/drone-helm`:
 
