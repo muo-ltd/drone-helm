@@ -9,7 +9,7 @@ RUN apk add dep git
 ENV GOOS linux 
 ENV GOARCH=386 
 
-WORKDIR /go/src/github.com/ipedrazas/drone-helm
+WORKDIR /go/src/github.com/muo-ltd/drone-helm
 COPY . .
 
 RUN dep ensure
@@ -19,9 +19,8 @@ RUN go build
 # ------ Drone-Helm plugin image ------
 #
 FROM alpine:3.9 as final
-LABEL Ivan Pedrazas <ipedrazas@gmail.com>
 
-COPY --from=builder /go/src/github.com/ipedrazas/drone-helm/drone-helm /bin/
+COPY --from=builder /go/src/github.com/muo-ltd/drone-helm/drone-helm /bin/
 
 # Helm version: can be passed at build time
 ARG VERSION

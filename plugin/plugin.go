@@ -233,31 +233,6 @@ func doHelmRepoAdd(repo string) ([]string, error) {
 	return repoAdd, nil
 }
 
-func doHelmInit(p *Plugin) []string {
-	init := make([]string, 1)
-	init[0] = "init"
-	if p.Config.StableRepoURL != "" {
-		init = append(init, "--stable-repo-url")
-		init = append(init, p.Config.StableRepoURL)
-	}
-	if p.Config.TillerNs != "" {
-		init = append(init, "--tiller-namespace")
-		init = append(init, p.Config.TillerNs)
-	}
-	if p.Config.ClientOnly {
-		init = append(init, "--client-only")
-	}
-	if p.Config.Upgrade {
-		init = append(init, "--upgrade")
-	}
-	if p.Config.CanaryImage {
-		init = append(init, "--canary-image")
-	}
-
-	return init
-
-}
-
 func doDependencyUpdate(chart string) []string {
 	dependencyUpdate := []string{
 		"dependency",
@@ -290,12 +265,6 @@ func (p *Plugin) Exec() error {
 
 	if p.Config.Debug {
 		p.debug()
-	}
-
-	init := doHelmInit(p)
-	err := runCommand(init)
-	if err != nil {
-		return fmt.Errorf("Error running helm command: " + strings.Join(init[:], " "))
 	}
 
 	if len(p.Config.HelmRepos) > 0 {
