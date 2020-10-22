@@ -1,5 +1,17 @@
 # Helm (Kubernetes) plugin for drone.io
 
+## Helm 3
+
+Update of the `ipedrazas/drone-helm` chart to use newer versions of `helm` and `kubectl`. Docker hub image is `muoltd/drone-helm:3.3.4-1.19.3`. The version matches the version of both `helm` and `kubernetes` used.
+
+This plugin allows to deploy a [Helm](https://github.com/kubernetes/helm) chart into a [Kubernetes](https://github.com/kubernetes/kubernetes) cluster.
+
+* Current `helm` version: 3.3.4
+* Current `kubectl` version: 1.19.3
+
+
+## Helm 2
+
 Update of the `ipedrazas/drone-helm` chart to use newer versions of `helm` and `kubectl`. Docker hub image is `muoltd/drone-helm:2.16.9-1.17.6`. The version matches the version of both `helm` and `kubernetes` used.
 
 This plugin allows to deploy a [Helm](https://github.com/kubernetes/helm) chart into a [Kubernetes](https://github.com/kubernetes/kubernetes) cluster.
