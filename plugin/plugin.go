@@ -233,6 +233,14 @@ func doHelmRepoAdd(repo string) ([]string, error) {
 	return repoAdd, nil
 }
 
+func doHelmInit(p *Plugin) []string {
+	init := make([]string, 1)
+	init[0] = "version"
+
+	return init
+
+}
+
 func doDependencyUpdate(chart string) []string {
 	dependencyUpdate := []string{
 		"dependency",
@@ -265,6 +273,12 @@ func (p *Plugin) Exec() error {
 
 	if p.Config.Debug {
 		p.debug()
+	}
+
+	init := doHelmInit(p)
+	err := runCommand(init)
+	if err != nil {
+		return fmt.Errorf("Error running helm command: " + strings.Join(init[:], " "))
 	}
 
 	if len(p.Config.HelmRepos) > 0 {
